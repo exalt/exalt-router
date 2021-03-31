@@ -1,0 +1,26 @@
+{
+    "name": "exalt-router",
+    "version": "0.1.0",
+    "description": "",
+    "main": "dist/index.js",
+    "scripts": {
+        "build": "exalt build",
+        "prepublishOnly": "npm run build"
+    },
+    "keywords": [],
+    "files": [
+        "dist"
+    ],
+    "author": "",
+    "license": "ISC",
+    "peerDependencies": {
+        "@exalt/core": "^0.2.0"
+    },
+    "dependencies": {
+        "@exalt/core": "^0.2.4"
+    },
+    "devDependencies": {
+        "@exalt/cli": "^0.2.2",
+        "@exalt/toolchain": "^0.2.2"
+    }
+}

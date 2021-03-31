@@ -1,0 +1,8 @@
+{
+    "name": "exalt-router",
+    "input": "src/index.js",
+    "toolchain": "@exalt/toolchain",
+    "toolchainOptions": {
+        "library": true
+    }
+}
