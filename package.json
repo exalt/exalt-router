@@ -1,6 +1,9 @@
 {
     "name": "@exalt/router",
     "version": "0.1.0",
+    "publishConfig": {
+        "access": "public"
+    },
     "description": "A simple client side router for exalt apps",
     "main": "dist/index.js",
     "scripts": {
