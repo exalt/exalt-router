@@ -1,34 +1,51 @@
-# Welcome to your new Library!
+# Exalt Router
 
-This project was bootstrapped using the [Exalt CLI](https://www.npmjs.com/package/@exalt/cli)
+A simple client side router for exalt apps.
+
+![Actions](https://github.com/exalt/exalt-router/workflows/build/badge.svg)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/exalt/exalt-router/blob/main/LICENSE)
+[![Donate](https://img.shields.io/badge/patreon-donate-green.svg)](https://www.patreon.com/outwalkstudios)
+[![Follow Us](https://img.shields.io/badge/follow-on%20twitter-4AA1EC.svg)](https://twitter.com/OutwalkStudios)
+
+---
+
+## Installation
+
+You can install @exalt/router using npm:
+
+```
+npm install @exalt/router
+```
 
 ---
 
 ## Getting Started
 
-To get started with developing your new project, you have several npm scripts available.
+@exalt/router comes with two components, `exalt-router` and `exalt-route`.
+Any exalt-route components must be a direct child of an exalt-router component.
 
-- `npm run build` <br/>
-This command will build your library for production and output it to the `dist` directory.
+The exalt-route component takes 2 attributes, a `url` and a `component`. The url attribute is the route for the page and can contain parameters.
+Parameters are path fragments that are prefixed with a colon and if you want the parameter to be option you can end it with a question mark.
+All parameters are mapped to props and passed to the component.
 
----
-
-## Customizing the Project
-
-You can configure your project using the generated `exalt.json` file.
-The `toolchain` property in your config file is the package that powers everything behind the cli commands.
-You can pass options to your toolchain of choice using the `toolchainOptions` property.
-Look at the documentation for your toolchain to determine what options are available.
-
----
-
-## Learn How to Develop Libraries with Exalt
-
-You can get started learning Exalt [here](https://github.com/OutwalkStudios/exalt)
+```html
+<exalt-router>
+    <exalt-route url="/" component="home-page" />
+    <exalt-route url="/about" component="about-page" />
+    <exalt-route url="/about/:topic?" component="about-page" />
+</exalt-router>
+```
 
 ---
 
-## Need help?
+## Reporting Issues
 
-If you need help or have any questions, we are always happy to answer them.
-Create a new [issue](https://github.com/OutwalkStudios/exalt/issues) to get started.
+If you are having trouble getting something to work with exalt or run into any problems, you can create a new [issue](https://github.com/exalt/exalt-router/issues).
+
+If this framework does not fit your needs or is missing a feature you would like to see, let us know! We would greatly appreciate your feedback on it.
+
+---
+
+## License
+
+Exalt Router is licensed under the terms of the [**MIT**](https://github.com/exalt/exalt-router/blob/main/LICENSE) license.

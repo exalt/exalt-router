@@ -1,23 +1,35 @@
 {
-    "name": "exalt-router",
+    "name": "@exalt/router",
     "version": "0.1.0",
-    "description": "",
+    "description": "A simple client side router for exalt apps",
     "main": "dist/index.js",
     "scripts": {
         "build": "exalt build",
         "prepublishOnly": "npm run build"
     },
-    "keywords": [],
+    "keywords": [
+        "exalt",
+        "router",
+        "spa"
+    ],
     "files": [
         "dist"
     ],
-    "author": "",
-    "license": "ISC",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/exalt/exalt-router.git"
+    },
+    "bugs": {
+        "url": "https://github.com/exalt/exalt-router/issues"
+    },
+    "homepage": "https://github.com/exalt/exalt-router#readme",
+    "author": "Outwalk Studios <support@outwalkstudios.com> (https://www.outwalkstudios.com/)",
+    "license": "MIT",
     "peerDependencies": {
         "@exalt/core": "^0.2.0"
     },
     "dependencies": {
-        "@exalt/core": "^0.2.4"
+        "@exalt/core": "^0.2.5"
     },
     "devDependencies": {
         "@exalt/cli": "^0.2.2",
