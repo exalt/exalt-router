@@ -31,11 +31,9 @@
     "peerDependencies": {
         "@exalt/core": "^0.2.0"
     },
-    "dependencies": {
-        "@exalt/core": "^0.2.5"
-    },
     "devDependencies": {
-        "@exalt/cli": "^0.2.2",
-        "@exalt/toolchain": "^0.2.2"
+        "@exalt/cli": "^0.2.3",
+        "@exalt/core": "^0.2.5",
+        "@exalt/toolchain": "^0.2.3"
     }
 }
