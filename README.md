@@ -39,6 +39,8 @@ It takes two attributes, `url` and `component`.
 
 Parameters are path fragments that are prefixed with a colon and if you want the parameter to be optional you can end it with a question mark. Any route parameters get passed as attributes on the rendered component.
 
+When defining a default route to render if there is no match, just omit the url attribute.
+
 **Example**
 ```html
 <exalt-router>
