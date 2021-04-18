@@ -21,19 +21,42 @@ npm install @exalt/router
 
 ## Getting Started
 
-@exalt/router comes with two components, `exalt-router` and `exalt-route`.
-Any exalt-route components must be a direct child of an exalt-router component.
+@exalt/router comes with 3 components to handle client side routing.
 
-The exalt-route component takes 2 attributes, a `url` and a `component`. The url attribute is the route for the page and can contain parameters.
-Parameters are path fragments that are prefixed with a colon and if you want the parameter to be option you can end it with a question mark.
-All parameters are mapped to props and passed to the component.
+- exalt-router
+- exalt-route
+- exalt-link
 
+### Exalt Router
+
+The exalt-router component is used to handle all the routing.
+It uses pushstate routing behind the scenes and parses the routes to find matches.
+
+### Exalt Route
+
+The exalt-route component is used to define a route and assign a component to it.
+It takes two attributes, `url` and `component`.
+
+Parameters are path fragments that are prefixed with a colon and if you want the parameter to be optional you can end it with a question mark. Any route parameters get passed as attributes on the rendered component.
+
+**Example**
 ```html
 <exalt-router>
     <exalt-route url="/" component="home-page" />
     <exalt-route url="/about" component="about-page" />
     <exalt-route url="/about/:topic?" component="about-page" />
 </exalt-router>
+```
+
+### Exalt Link
+
+The exalt-link component is used to render a link tag and change its default behavior to use client side routing.
+This ensures that in server side rendered environments the routing still works without JavaScript.
+The exalt-link component only takes a `url` attribute.
+
+**Example**
+```html
+<exalt-link url="/about">About</exalt-link>
 ```
 
 ---

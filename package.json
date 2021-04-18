@@ -1,6 +1,6 @@
 {
     "name": "@exalt/router",
-    "version": "0.1.1",
+    "version": "0.2.0",
     "publishConfig": {
         "access": "public"
     },
@@ -29,11 +29,11 @@
     "author": "Outwalk Studios <support@outwalkstudios.com> (https://www.outwalkstudios.com/)",
     "license": "MIT",
     "peerDependencies": {
-        "@exalt/core": "^0.2.0"
+        "@exalt/core": "0.2.x"
     },
     "devDependencies": {
         "@exalt/cli": "^0.2.3",
-        "@exalt/core": "^0.2.5",
+        "@exalt/core": "^0.2.7",
         "@exalt/toolchain": "^0.2.3"
     }
 }
