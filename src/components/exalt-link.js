@@ -8,7 +8,7 @@ export class ExaltLink extends Component {
         this.root.innerHTML = "";
 
         return html`
-            <a href=${url} onclick=${this.navigate}>
+            <a href=${(ExaltRouter.hash) ? `/#${url}` : url} onclick=${this.navigate}>
                 ${slot}
             </a>
         `;
@@ -16,8 +16,10 @@ export class ExaltLink extends Component {
 
     /* remove the default behavior of the link tag and replace it with client side routing */
     navigate = (e) => {
-        e.preventDefault();
-        ExaltRouter.navigate(this.props.url);
+        if (!ExaltRouter.hash) {
+            e.preventDefault();
+            ExaltRouter.navigate(this.props.url);
+        }
     }
 }
 

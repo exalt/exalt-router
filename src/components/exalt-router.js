@@ -4,6 +4,7 @@ export class ExaltRouter extends Component {
 
     static parameters = {};
     static routes = [];
+    static hash = false;
 
     render() {
         return { source: this.root.innerHTML, data: [] };
@@ -11,26 +12,33 @@ export class ExaltRouter extends Component {
 
     /* setup the router and render the current route */
     mount() {
-        window.addEventListener("popstate", this.onURLChange);
+        ExaltRouter.hash = this.props.hash;
+        const url = (ExaltRouter.hash) ? (window.location.hash.slice(1) || "/") : (window.location.pathname || "/");
+        window.addEventListener((ExaltRouter.hash) ? "hashchange" : "popstate", this.onURLChange);
 
         ExaltRouter.routes = Array.from(this.root.querySelectorAll("exalt-route"));
-        ExaltRouter.resolveRoute(window.location.pathname || "/");
+        ExaltRouter.resolveRoute(url);
     }
 
     /* remove the routing listener */
     unmount() {
-        window.removeEventListener("popstate", this.onURLChange);
+        window.removeEventListener((ExaltRouter.hash) ? "hashchange" : "popstate", this.onURLChange);
     }
 
     /* resolve the current location when the current url changes */
     onURLChange() {
-        ExaltRouter.resolveRoute(window.location.pathname || "/");
+        const url = (ExaltRouter.hash) ? (window.location.hash.slice(1) || "/") : (window.location.pathname || "/");
+        ExaltRouter.resolveRoute(url);
     }
 
     /* navigate to a new url */
     static navigate(url) {
-        window.history.pushState({}, url, (window.location.origin + url));
-        ExaltRouter.resolveRoute(url);
+        if (ExaltRouter.hash) {
+            window.location.href = (window.location.origin + `/#${url}`);
+        } else {
+            window.history.pushState({}, url, (window.location.origin + url));
+            ExaltRouter.resolveRoute(url);
+        }
     }
 
     /* check if a route matches a url */
