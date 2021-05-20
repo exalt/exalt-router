@@ -30,7 +30,16 @@ npm install @exalt/router
 ### Exalt Router
 
 The exalt-router component is used to handle all the routing.
-It uses pushstate routing behind the scenes and parses the routes to find matches.
+It parses the routes behehind the scenes and will use push state routing by default.
+If you want to use hash routing, you can set the hash attribute to enable it.
+
+If you want to programatically change the route, ExaltRouter exposes a static navigate method.
+
+```js
+import { ExaltRouter } from "@exalt/router";
+
+ExaltRouter.navigate("/about");
+```
 
 ### Exalt Route
 
@@ -47,6 +56,7 @@ When defining a default route to render if there is no match, just omit the url 
     <exalt-route url="/" component="home-page" />
     <exalt-route url="/about" component="about-page" />
     <exalt-route url="/about/:topic?" component="about-page" />
+    <exalt-route component="not-found" />
 </exalt-router>
 ```
 
