@@ -89,7 +89,7 @@ export class ExaltRouter extends Component {
             /* assign all the route parameters as component props */
             const props = Object.keys(ExaltRouter.parameters);
             for (let prop of props) {
-                view.setAttribute(param, ExaltRouter.parameters[prop]);
+                view.setAttribute(prop, ExaltRouter.parameters[prop]);
             }
 
             route.appendChild(view);
