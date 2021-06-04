@@ -6,6 +6,7 @@
     },
     "description": "A simple client side router for exalt apps",
     "main": "dist/index.js",
+    "types": "types/router.d.ts",
     "scripts": {
         "build": "exalt build",
         "prepublishOnly": "npm run build"
@@ -16,7 +17,8 @@
         "spa"
     ],
     "files": [
-        "dist"
+        "dist",
+        "types"
     ],
     "repository": {
         "type": "git",
@@ -33,7 +35,7 @@
     },
     "devDependencies": {
         "@exalt/cli": "^0.3.0",
-        "@exalt/core": "^0.3.4",
-        "@exalt/toolchain": "^0.3.0"
+        "@exalt/core": "^0.3.6",
+        "@exalt/toolchain": "^0.3.1"
     }
 }
