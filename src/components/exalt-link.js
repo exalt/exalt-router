@@ -3,12 +3,15 @@ import { ExaltRouter } from "./exalt-router";
 
 export class ExaltLink extends Component {
 
-    render({ url }) {
+    render({ url, ...props }) {
         const slot = this.root.innerHTML;
         this.root.innerHTML = "";
 
+        const keys = Object.keys(props);
+        const attribs = keys.map((key) => `${key}="${(props[key] === true) ? "" : props[key]}"`);
+
         return html`
-            <a href=${(ExaltRouter.hash) ? `/#${url}` : url} onclick=${this.navigate}>
+            <a href=${(ExaltRouter.hash) ? `/#${url}` : url} ${attribs.join(" ")} onclick=${this.navigate}>
                 ${slot}
             </a>
         `;

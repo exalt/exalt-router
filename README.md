@@ -64,7 +64,8 @@ When defining a default route to render if there is no match, just omit the url 
 
 The exalt-link component is used to render a link tag and change its default behavior to use client side routing.
 This ensures that in server side rendered environments the routing still works without JavaScript.
-The exalt-link component only takes a `url` attribute.
+The exalt-link component only takes a `url` attribute, any other attributes passed to this component
+will become attributes assigned to the internal `a` element.
 
 **Example**
 ```html
