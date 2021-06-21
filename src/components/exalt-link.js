@@ -11,18 +11,16 @@ export class ExaltLink extends Component {
         const attribs = keys.map((key) => `${key}="${(props[key] === true) ? "" : props[key]}"`);
 
         return html`
-            <a href=${(ExaltRouter.hash) ? `/#${url}` : url} ${attribs.join(" ")} onclick=${this.navigate}>
+            <a href=${(ExaltRouter.hash) ? `#${url}` : url} ${attribs.join(" ")} onclick=${this.navigate}>
                 ${slot}
-            </a>
+             </a>
         `;
     }
 
     /* remove the default behavior of the link tag and replace it with client side routing */
     navigate = (e) => {
-        if (!ExaltRouter.hash) {
-            e.preventDefault();
-            ExaltRouter.navigate(this.props.url);
-        }
+        e.preventDefault();
+        ExaltRouter.navigate(this.props.url);
     }
 }
 

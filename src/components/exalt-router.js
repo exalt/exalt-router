@@ -34,7 +34,7 @@ export class ExaltRouter extends Component {
     /* navigate to a new url */
     static navigate(url) {
         if (ExaltRouter.hash) {
-            window.location.href = (window.location.origin + `/#${url}`);
+            window.location.hash = `#${url}`;
         } else {
             window.history.pushState({}, url, (window.location.origin + url));
             ExaltRouter.resolveRoute(url);
