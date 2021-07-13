@@ -1,9 +1,15 @@
 {
     "name": "exalt-router",
-    "input": "src/index.js",
+    "input": {
+        "index": "src/index.js",
+        "exalt-router": "src/components/exalt-router.js",
+        "exalt-route": "src/components/exalt-route.js",
+        "exalt-link": "src/components/exalt-link.js"
+    },
     "toolchain": "@exalt/toolchain",
     "toolchainOptions": {
         "library": true,
+        "external": ["@exalt/core"],
         "paths": {
             "@components": "src/components"
         }
