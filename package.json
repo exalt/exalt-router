@@ -1,6 +1,6 @@
 {
     "name": "@exalt/router",
-    "version": "0.3.5",
+    "version": "0.3.6",
     "publishConfig": {
         "access": "public"
     },
@@ -21,7 +21,10 @@
         "types"
     ],
     "exports": {
-        "./": "./dist/"
+        ".": "./dist/index.js",
+        "./exalt-router": "./dist/exalt-router.js",
+        "./exalt-route": "./dist/exalt-route.js",
+        "./exalt-link": "./dist/exalt-link.js"
     },
     "repository": {
         "type": "git",
