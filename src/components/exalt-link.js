@@ -1,6 +1,8 @@
 import { Component, html } from "@exalt/core";
+import { define } from "@exalt/core/decorators";
 import { ExaltRouter } from "./exalt-router";
 
+@define("exalt-link")
 export class ExaltLink extends Component {
 
     render({ url, ...props }) {
@@ -23,5 +25,3 @@ export class ExaltLink extends Component {
         ExaltRouter.navigate(this.props.url);
     }
 }
-
-Component.create({ name: "exalt-link", useShadow: false }, ExaltLink);

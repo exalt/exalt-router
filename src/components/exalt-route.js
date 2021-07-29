@@ -1,6 +1,8 @@
 import { Component } from "@exalt/core";
+import { define } from "@exalt/core/decorators";
 import { ExaltRouter } from "./exalt-router";
 
+@define("exalt-route")
 export class ExaltRoute extends Component {
 
     render() {
@@ -11,5 +13,3 @@ export class ExaltRoute extends Component {
         return { source: this.root.innerHTML, data: [] };
     }
 }
-
-Component.create({ name: "exalt-route", useShadow: false }, ExaltRoute);
