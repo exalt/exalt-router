@@ -8,8 +8,6 @@
     },
     "toolchain": "@exalt/toolchain",
     "toolchainOptions": {
-        "library": true,
-        "external": ["@exalt/core"],
         "paths": {
             "@components": "src/components"
         }
