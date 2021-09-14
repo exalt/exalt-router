@@ -1,7 +1,7 @@
 import { Component } from "@exalt/core";
 import { define } from "@exalt/core/decorators";
 
-@define("exalt-router")
+@define({ tag: "exalt-router", shadow: false })
 export class ExaltRouter extends Component {
 
     static parameters = {};
