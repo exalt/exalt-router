@@ -1,7 +1,7 @@
-import { Component } from "@exalt/core";
+import { Component, html } from "@exalt/core";
 import { define } from "@exalt/core/decorators";
 
-@define({ tag: "exalt-router", shadow: false })
+@define("exalt-router")
 export class ExaltRouter extends Component {
 
     static parameters = {};
@@ -9,7 +9,7 @@ export class ExaltRouter extends Component {
     static hash = false;
 
     render() {
-        return { source: this.root.innerHTML, data: [] };
+        return html`<slot></slot>`;
     }
 
     /* setup the router and render the current route */
@@ -18,7 +18,7 @@ export class ExaltRouter extends Component {
         const url = (ExaltRouter.hash) ? (window.location.hash.slice(1) || "/") : (window.location.pathname || "/");
         window.addEventListener((ExaltRouter.hash) ? "hashchange" : "popstate", this.onURLChange);
 
-        ExaltRouter.routes = Array.from(this.root.querySelectorAll("exalt-route"));
+        ExaltRouter.routes = Array.from(this.querySelectorAll("exalt-route"));
         ExaltRouter.resolveRoute(url);
     }
 

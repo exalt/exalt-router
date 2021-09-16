@@ -1,10 +1,10 @@
-import { Component } from "@exalt/core";
+import { Component, html } from "@exalt/core";
 import { define } from "@exalt/core/decorators";
 
-@define({ tag: "exalt-route", shadow: false })
+@define("exalt-route")
 export class ExaltRoute extends Component {
 
     render() {
-        return { source: this.root.innerHTML, data: [] };
+        return html`<slot></slot>`;
     }
 }

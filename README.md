@@ -62,15 +62,18 @@ When defining a default route to render if there is no match, just omit the url 
 
 ### Exalt Link
 
-The exalt-link component is used to render a link tag and change its default behavior to use client side routing.
+The exalt-link component is used to wrap an anchor tag and change its default behavior to use client side routing.
 This ensures that in server side rendered environments the routing still works without JavaScript.
-The exalt-link component only takes a `url` attribute, any other attributes passed to this component
-will become attributes assigned to the internal `a` element.
+The exalt-link component only takes a `url` attribute which is passed as an href attribute to the child anchor tag.
 
 **Example**
 ```html
-<exalt-link url="/about">About</exalt-link>
+<exalt-link url="/about">
+    <a>About<a>
+</exalt-link>
 ```
+
+The anchor tag does not need to be a direct child of the exalt-link component, the component will just grab the first anchor tag it finds and enable client side rendering on it.
 
 ---
 
