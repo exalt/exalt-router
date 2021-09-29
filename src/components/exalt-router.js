@@ -72,9 +72,12 @@ export class ExaltRouter extends Component {
 
     /* match a url to a route component and render it */
     static resolveRoute(url) {
+        const [pageUrl, hashFragment] = url.split("#");
+
+
         /* try and match the url with a route */
         let route = ExaltRouter.routes.filter((route) => {
-            return route.hasAttribute("url") && ExaltRouter.matchRoute(route.getAttribute("url"), url);
+            return route.hasAttribute("url") && ExaltRouter.matchRoute(route.getAttribute("url"), pageUrl);
         })[0];
 
         /* if there was no match, try to use a 404 route */
@@ -95,7 +98,8 @@ export class ExaltRouter extends Component {
             }
 
             route.appendChild(view);
-            window.scrollTo(0, 0);
+            if (hashFragment) view.root.getElementById(hashFragment).scrollIntoView(true);
+            else window.scrollTo(0, 0);
 
         } else {
             console.log("exalt-router: route not found!")
