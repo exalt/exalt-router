@@ -98,8 +98,13 @@ export class ExaltRouter extends Component {
             }
 
             route.appendChild(view);
-            if (hashFragment) view.root.getElementById(hashFragment).scrollIntoView(true);
-            else window.scrollTo(0, 0);
+            if (hashFragment) {
+                const viewRoot = view.shadowRoot ? view.shadowRoot : view;
+                const target = viewRoot.querySelector(`#${hashFragment}`);
+                target.scrollIntoView(true);
+            } else {
+                window.scrollTo(0, 0);
+            }
 
         } else {
             console.log("exalt-router: route not found!")
