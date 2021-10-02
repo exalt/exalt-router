@@ -85,6 +85,9 @@ export class ExaltRouter extends Component {
 
         /* render the route */
         if (route) {
+            /* dispatch a resolve event to load route split bundles */
+            route.dispatchEvent(new CustomEvent("resolve"));
+
             for (let route of ExaltRouter.routes) {
                 if (route.firstChild) route.removeChild(route.firstChild);
             }

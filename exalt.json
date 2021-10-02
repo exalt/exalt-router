@@ -4,7 +4,8 @@
         "index": "src/index.js",
         "exalt-router": "src/components/exalt-router.js",
         "exalt-route": "src/components/exalt-route.js",
-        "exalt-link": "src/components/exalt-link.js"
+        "exalt-link": "src/components/exalt-link.js",
+        "exalt-redirect": "src/components/exalt-redirect.js"
     },
     "toolchain": "@exalt/toolchain",
     "toolchainOptions": {

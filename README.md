@@ -26,6 +26,7 @@ npm install @exalt/router
 - exalt-router
 - exalt-route
 - exalt-link
+- exalt-redirect
 
 ### Exalt Router
 
@@ -49,6 +50,11 @@ It takes two attributes, `url` and `component`.
 Parameters are path fragments that are prefixed with a colon and if you want the parameter to be optional you can end it with a question mark. Any route parameters get passed as attributes on the rendered component.
 
 When defining a default route to render if there is no match, just omit the url attribute.
+
+When you want to split the bundle at the route level, you can add an `onresolve` event.
+```js
+html`<exalt-route url="/" component="home-page" onresolve=${() => import("@pages/home-page")} />`
+```
 
 **Example**
 ```html
@@ -74,6 +80,16 @@ The exalt-link component only takes a `url` attribute which is passed as an href
 ```
 
 The anchor tag does not need to be a direct child of the exalt-link component, the component will just grab the first anchor tag it finds and enable client side rendering on it.
+
+### Exalt Redirect
+
+The exalt-redirect component is used to conditionally redirect to another page or website.
+As soon as the component is rendered it will determine how to redirect based on the url attribute and then the page will be redirected.
+
+**Example**
+```html
+<exalt-redirect url="/redirect-route" />
+```
 
 ---
 
