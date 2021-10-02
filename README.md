@@ -1,6 +1,7 @@
 # Exalt Router
 
 A simple client side router for exalt apps.
+Full documentation is available [here](https://www.exaltjs.com/docs/#exalt-router)
 
 ![Actions](https://github.com/exalt/exalt-router/workflows/build/badge.svg)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/exalt/exalt-router/blob/main/LICENSE)
